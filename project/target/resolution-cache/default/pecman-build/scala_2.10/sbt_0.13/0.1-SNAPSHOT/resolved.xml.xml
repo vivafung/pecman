@@ -4,7 +4,7 @@
 		module="pecman-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20160715172731"
+		publication="20160716164934"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

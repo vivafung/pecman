@@ -10,17 +10,27 @@ import spray.http._
 import spray.routing._
 
 // REST service actor
-class ServiceActor {
-  implicit def actorRefFactory = context
-  def receive = runRoute(queries)
+class ServiceActor extends Actor with RestService{
   println("starting service Actor ... ")
+  implicit def actorRefFactory = context
+  def receive = runRoute(eventsRoute)
+
 
 }
 
+// REST service, this trait defines the services bahavior independently
 
-// REST service
 trait RestService extends HttpService with SLF4JLogging {
-  val queries =
   println("in trait of Rest service .....")
+  val eventsRoute = {
+    path("eventquery") {
+      get {
+        complete {
+          "The first GET point !!! "
+        }
+      }
+    }
+  }
+
 
 }

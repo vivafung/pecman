@@ -11,9 +11,9 @@ import spray.can.Http
   */
 object Boot extends App with Configuration{
   // create an actor system for application
-  implicit val system = ActorSystem("scala-based barebone restAPI")
+  implicit val system = ActorSystem("scala-based-barebone-restAPI")
 
-  //create and start rest service
+  //create and start rest services
   val restService = system.actorOf(Props[ServiceActor], "barebone-api")
 
   // start http server
